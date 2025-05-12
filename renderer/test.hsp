@@ -28,6 +28,12 @@ update_priority_draw_object id, PRIORITY_BACK
 info_id = make_draw_object (MOVE_TYPE_STATIC, TYPE_STR, LIFE_FOREVER, 50, 20, -0,-0, "")
 
 
+screen 2: picload "obake.png"
+gsel 0
+id = make_draw_object(MOVE_TYPE_EASE, TYPE_SPRITE, 4.0, 200,200, 200,200, "2,0,0,374,400")
+set_ease_alpha get_entity_id(id), 1, 256, ease_quad_in
+
+
 *main
 	manage_keyfps
 	dt = frametime()

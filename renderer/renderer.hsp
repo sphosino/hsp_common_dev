@@ -143,7 +143,7 @@
 		swbreak
 		swend
 
-		split draw_object_params(obj_id),",",tmp
+		split draw_object_params(obj_id), ",", tmp
 
 		//•`‰æŠJŽn
 		
@@ -188,19 +188,17 @@
         case TYPE_SPRITE
         
             imgid = int(tmp.0)
-            sx = int(tmp.1)
+            sx = int(tmp.1) 
             sy = int(tmp.2)
             sw = int(tmp.3)
             sh = int(tmp.4)
 
+			logmes strf("%d , %d,%d,%d,%d  ,  %d,%d,%d,%d",imgid ,sx,sy,sw,sh,x,y,w,h)
             color 0,0,0
-            gmode 4, sw, sh, draw_object_alpha(obj_id)
+            gmode 4, sw, sh, alpha
             pos x, y
 
-            scaled_sizex = w * draw_object_scale(obj_id)
-            scaled_sizey = h * draw_object_scale(obj_id)
-
-            grotate imgid, sx, sy, draw_object_angle(obj_id), scaled_sizex, scaled_sizey
+            grotate imgid, sx, sy, 0, w, h
         swbreak
 
         swend
